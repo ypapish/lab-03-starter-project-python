@@ -5,6 +5,7 @@ from starlette.responses import FileResponse
 from spaceship.config import Settings
 from spaceship.routers import api, health
 
+#add info about laboratory work #3
 
 def make_app(settings: Settings) -> FastAPI:
     app = FastAPI(
@@ -23,6 +24,6 @@ def make_app(settings: Settings) -> FastAPI:
 
     @app.get('/', include_in_schema=False, response_class=FileResponse)
     async def root() -> str:
-        return 'build/index.html'
+        return 'The laboratory work was completed by Yana Papish'
 
     return app
